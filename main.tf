@@ -11,17 +11,17 @@ provider "aws" {
   region = "us-west-2"
 }
 
-/* VPC
+
 resource "aws_vpc" "examplevpc" {
   cidr_block = "10.0.0.0/16"
 }
-*/
+
 
 
 resource "aws_instance" "WebsiteInstance" {
-    ami = "var.ami"
-    instance_type = "var.instance_type"
-    tags{
+    ami = var.ami
+    instance_type = var.instance_type
+    tags {
         Name = "EC2_Terraform_Instance"
         }
 }
